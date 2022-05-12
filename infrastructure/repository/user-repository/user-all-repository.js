@@ -5,7 +5,7 @@ const allUsers = async (req, res) => {
   try {
     const users = await tb_USER.findAll();
 
-    return res.status(200).json({ users }).message("Users loaded successfully");
+    return res.status(200).json({ users });
   } catch (error) {
     const finalError = await httpStatusResponse(
       500,
