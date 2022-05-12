@@ -3,7 +3,7 @@ const tb_USER = require("../../database/model/user-model/user-registration-model
 
 const allUsers = async (req, res) => {
   try {
-    const users = await tb_USER.findAll();
+    const users = await tb_USER.findAll(); //
 
     return res.status(200).json({ users });
   } catch (error) {
