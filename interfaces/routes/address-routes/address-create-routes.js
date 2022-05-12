@@ -1,10 +1,10 @@
 const express = require('express');
-const createAddressInterface = express.Router();
-const validateFieldsCreateAddress = require('../../controllers/address-controller/address-create-controller');
+const createAddressRoute = express.Router();
+const controllerCreateAddress = require('../../controllers/address-controller/address-create-controller');
 const createAddress = require('../../infrastructure/repository/address-repository/address-registration-repository');
 
-createAddressInterface.post('/api/address', async (request, response) => {
-  const isFieldsValid = validateFieldsCreateAddress(request, response);
+createAddressRoute.post('/address', async (request, response) => {
+  const isFieldsValid = controllerCreateAddress(request, response);
 
   if(isFieldsValid != true) return isFieldsValid;
 
@@ -14,4 +14,4 @@ createAddressInterface.post('/api/address', async (request, response) => {
 })
 
 
-module.exports = createAddressInterface;
+module.exports = createAddressRoute;

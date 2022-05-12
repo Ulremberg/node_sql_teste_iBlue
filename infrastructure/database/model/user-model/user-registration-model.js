@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 
 const tb_USER = sequelize.define('user', {
   id: {
-    type: DataTypes.STRING,
+    type: DataTypes.BIGINT,
     allowNull: false,
     primaryKey: true
   },
